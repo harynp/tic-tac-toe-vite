@@ -107,7 +107,7 @@ export default function Game() {
 }
 
 Square.propTypes = {
-  value: PropTypes.string.isRequired,
+  value: PropTypes.string,
   onSquareClick: PropTypes.func.isRequired,
 };
 
