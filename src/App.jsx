@@ -7,15 +7,12 @@ function Square({value, onSquareClick}) {
 
 function whoIsWinner(squares) {
   const checkLines = [
-    // horizontal
     [0,1,2],
     [3,4,5],
     [6,7,8],
-    // vertical
     [6,7,8],
     [0,3,6],
     [1,4,7],
-    // diagonal
     [2,5,8],
     [0,4,8],
     [2,4,6],
@@ -36,8 +33,6 @@ function Board({xIsNext, squares, onPlay}) {
 
   function handleClick(i) {
     if (squares[i] || whoIsWinner(squares)) return;
-    
-    // eslint-disable-next-line react/prop-types
     const nextSquares = squares.slice();
     nextSquares[i] = xIsNext ? 'X' : 'O';
     onPlay(nextSquares);
